@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Transaction Slip</title>
+</head>
+<body>
+  <h2>Amount Sending Slip</h2>
+  <p><strong>Sender Name:</strong> <span id="senderName"></span></p>
+  <p><strong>Sender Number:</strong> <span id="senderNumber"></span></p>
+  <p><strong>Receiver Name:</strong> <span id="receiverName"></span></p>
+  <p><strong>Receiver Number:</strong> <span id="receiverNumber"></span></p>
+  <p><strong>Amount:</strong> <span id="amount"></span></p>
+  <p><strong>Date & Time:</strong> <span id="datetime"></span></p>
+
+  <script>
+    // Get values from URL
+    const params = new URLSearchParams(window.location.search);
+    document.getElementById("senderName").textContent = params.get("senderName");
+    document.getElementById("senderNumber").textContent = params.get("senderNumber");
+    document.getElementById("receiverName").textContent = params.get("receiverName");
+    document.getElementById("receiverNumber").textContent = params.get("receiverNumber");
+    document.getElementById("amount").textContent = params.get("amount");
+
+    // Show current date and time
+    const now = new Date();
+    document.getElementById("datetime").textContent = now.toLocaleString();
+  </script>
+</body>
+</html>
